@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>매물 삭제하기</h1>
+<hr>
+<br><br>
+<h3>삭제: {{post.price}} | {{post.area}} | {{post.owner}} | {{post.date}}</h3>
+<br>
+<div class ="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <strong>정말로 삭제하시겠습니까?</strong><br><br>
+        <button class="btn btn-secondary">삭제하기</button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

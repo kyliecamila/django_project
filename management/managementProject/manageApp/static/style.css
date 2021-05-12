@@ -1,0 +1,44 @@
+
+.info { 
+    border: dashed 5px black;
+    padding: 15px;
+}
+.my_button {
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding:3px;
+}
+a {
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+}
+
+
+.my_content {
+    
+    margin:10px;
+    font-size: 20px;
+    padding-left:10px;
+}
+.items {
+    
+    display:flex;
+    text-align: right ;
+    margin-bottom: 5px;
+
+}
+    
+.width {
+    width: 200px;
+}
+.width2 {
+    width: 100px;
+}
+
+.info > div {
+    
+    font-size: 20px;
+}

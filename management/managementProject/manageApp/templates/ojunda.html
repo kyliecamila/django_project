@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'style.css' %}" rel="stylesheet">
+
+<h1>오전다구역</h1>
+<hr>
+<div class="info">
+    <p>
+        <h4>조합 전화번호: 031-429-5562</h4>
+    </p>
+    <p>
+        <h4>진행상황: 사업시행인가</h4>
+    </p>
+</div>
+<br>
+<div class="right">
+    <ol>
+        {% for post in category_posts %}
+        <div >
+            <li class= "my_content">
+                    <a href="{% url 'detail' post.pk %}" class="items">
+                        <div class="width2">{{ post.price }}</div>
+                        <div class="width2">| {{ post.area }}</div>
+                        <div class="width">| {{ post.owner }}</div>
+                        <div class="width2">| {{ post.date }}</div>
+                <a href="{% url 'edit_post' post.pk %}" class="my_button" > 수정</a>
+                <a href="{% url 'delete_post' post.pk %}" class="my_button" >삭제</a> </a> 
+           </li>
+        </div>
+        
+        {% endfor %}
+    </ol>
+    
+</div>
+   
+{% endblock %}

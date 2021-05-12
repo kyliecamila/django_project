@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<link href="{% static 'detail.css' %}" rel="stylesheet">
+
+<br>
+<h1>{{ post.district }} </h1>
+<br>
+<h3>메모</h3>
+ 
+<div class="memo">
+    {{ post.memo }}
+</div>
+
+<div>
+    개시 날짜: {{ post.date }}<br>
+    가격: {{ post.price }}<br>
+    지정 평형: {{ post.area }} <br>
+    부동산: {{ post.owner }}
+
+</div>
+
+
+<br><br>
+<a href="{% url 'edit_post' post.pk %}" class="btn btn-secondary">수정</a>
+<a href="{% url 'delete_post' post.pk %}" class="btn btn-secondary" >삭제</a>
+{% endblock %}

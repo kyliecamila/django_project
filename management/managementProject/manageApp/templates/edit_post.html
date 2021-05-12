@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>매물 수정하기</h1>
+<hr>
+<br><br>
+<div class ="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button class="btn btn-secondary">수정하기</button>
+    </form>
+</div>
+ 
+
+
+
+{% endblock %}
