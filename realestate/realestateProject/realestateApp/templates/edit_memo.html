@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'addthings.css' %}" type = "text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+<h1>메모 수정하기</h1>
+{% endblock %}
+<hr>
+<br><br>
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="context">
+        <label for="district_memo" class="middle">내용</label>
+        <br><br>
+        <textarea name="district_memo" id= "district_memo" cols="30" rows="10" >{{ memo.district_memo}}</textarea>
+    </div>
+    
+    <br>
+    <div class="center">
+        <button class="submit" type="submit">등록</button>
+    </div>
+</form>
+
+{% endblock %}

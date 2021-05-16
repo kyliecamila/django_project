@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'addthings.css' %}" type = "text/css" rel="stylesheet">
+{% endblock %}
+<h1>메모하기</h1>
+<hr>
+<br><br>
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="context">
+        <label for="district">구역</label>
+        <input type="text" id="district" name= "district" placeholder="제목을 입력하세요">
+    </div>
+    <div class="context">
+        <label for="district_memo">내용</label>
+        <textarea name="district_memo" id= "district_memo" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
+    </div>
+    
+    <br>
+    <div class="center">
+        <button class="submit" type="submit">등록</button>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재개발/재건축 매물관리</title>
+  <link href="{% static 'base2.css' %}" type = "text/css" rel="stylesheet">
+  {% block css %}
+
+  {% endblock css %}
+</head>
+
+<body>
+  <nav class="nav_area">
+    <ul>
+      <li><a href="{% url 'home' %}">재개발/재건축</a></li>
+      <li><a href="{% url 'home' %}">내 매물</a></li>
+      <li><a href="#">동안구</a>
+        <ul>
+          <li><a href="#">뉴타운맨션 삼호</a>
+            <ul>
+              <li><a href="{% url 'newtown1' %}">뉴타운맨션 삼호 1~3차</a></li>
+              <li><a href="{% url 'newtown4' %}">뉴타운맨션 삼호 4차</a></li>
+              <li><a href="{% url 'newtown5' %}">뉴타운맨션 삼호 5차</a></li>
+              <li><a href="{% url 'newtown6' %}">뉴타운맨션 삼호 6차</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'duckheon' %}">덕현지구</a></li>
+          <li><a href="{% url 'miryung' %}">미륭아파트</a></li>
+          <li><a href="{% url 'bisan' %}">비산초교</a></li>
+          <li><a href="{% url 'samsin' %}">삼신 6차</a></li>
+          <li><a href="{% url 'oncheon' %}">온천지구</a></li>
+          <li><a href="{% url 'yungchang' %}">융창지구</a></li>
+          <li><a href="{% url 'imgok' %}">임곡지구 비산자이아이파크</a></li>
+          <li><a href="{% url 'hogae' %}">호계구사거리지구</a></li>
+        </ul>
+      </li>
+      <li><a href="#">만안구</a>
+        <ul>
+          <li><a href="{% url 'nangcheon' %}">냉천지구</a></li>
+          <li><a href="{% url 'sangrok' %}">상록지구</a></li>
+          <li><a href="{% url 'station' %}">안양역세권주변지구</a></li>
+          <li><a href="{% url 'art' %}">안양예술공원 아르테자이</a></li>
+          <li><a href="{% url 'hwachang' %}">화창지구</a></li>
+        </ul>
+      </li>
+      <li><a href="#">내손동</a>
+        <ul>
+          <li><a href="{% url 'naesonda' %}">내손다구역</a></li>
+          <li><a href="{% url 'naesonra' %}">내손라구역</a></li>
+        </ul>
+      </li>
+      <li><a href="#">오전동</a>
+        <ul>
+          <li><a href="{% url 'gocheonga' %}">고천가구역</a></li>
+          <li><a href="{% url 'gocheonna' %}">고천나구역</a></li>
+          <li><a href="{% url 'ojunna' %}">오전나구역</a></li>
+          <li><a href="{% url 'ojunda' %}">오전다구역</a></li>
+        </ul>
+      </li>
+      <li><a href="{% url 'add' %}">매물 추가</a></li>
+    </ul>
+  </nav>
+  <div class="title">
+    {% block title %}
+
+    {% endblock %}
+  </div>
+  <div class="content" class="upper" >
+    <ul>
+      {% for memo in memos %}
+          <li class="memo">
+              <div class="width">{{ memo.district_memo}}</div>
+              <br><br>
+              <a href="{% url 'edit_memo' memo.pk %}" class="button"> 수정</a>                         
+         </li>
+     
+      {% endfor %}
+  </ul>        
+  
+  
+  
+  <br>
+  <div>
+      <ol>
+          {% for article in category_articles %}
+          <div >
+              <li class="items" >
+                <div>
+                  <a href="#" >{{ article.price }}</a>
+                  <a href="#" >| {{ article.area }}</a>
+                  <a href="#" >| {{ article.owner }}</a>
+                  <a href="#">| {{ article.date }}</a>
+                  <a href="{% url 'edit' article.pk %}" class="button"> 수정</a>
+                  <a href="{% url 'delete' article.pk %}" class="button">삭제</a>
+                </div>
+                <a href="#">{{ article.memo }}</a>
+             </li>
+          </div>
+          
+          {% endfor %}
+      </ol>
+      
+  </div>
+    {% block content %}
+
+    {% endblock %}
+  </div>
+</body>
+
+</html>
+

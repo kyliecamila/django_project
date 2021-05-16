@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<h1>{{ cats }}</h1>
+<ul>
+    {% for article in category_articles %}
+         <li><a href="{% url 'detail' article.pk %}"> {{ article.price }} |
+             {{ article.area }} |
+             {{ article.owner }} |
+             {{ article.date }}</a> - 
+             <a href="{% url 'edit' article.pk %}" >수정</a>
+             <a href="{% url 'delete' article.pk %}">삭제</a>
+            </li>
+    {% endfor %}
+    
+{% endblock %}

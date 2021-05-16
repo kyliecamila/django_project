@@ -1,0 +1,28 @@
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.button {
+    border: solid black 3px;
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.items {
+    margin: 15px;
+    font-size:20px;
+}
+.nav_area {
+    margin-bottom: 20px;
+}
+h1 {
+    margin-left: 35px;
+}
+.content {
+    margin: 20px 0;
+}

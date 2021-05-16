@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'my.css' %}" type = "text/css" rel="stylesheet">
+
+{% endblock %}
+{% block title %}
+<h1>내 매물</h1>
+{% endblock %}
+
+{% block content %}
+
+
+<ol>
+    {% for article in my_articles %}
+    <div >
+        <li class="my" >
+          <div>
+            <a href="#" >{{ article.price }}</a>
+            <a href="#" >| {{ article.area }}</a>
+            <a href="#" >| {{ article.owner }}</a>
+            <a href="#">| {{ article.date }}</a>
+            <a href="{% url 'edit' article.pk %}" class="button"> 수정</a>
+            <a href="{% url 'delete' article.pk %}" class="button">삭제</a>
+          </div>
+        
+          <a href="#">{{ article.memo }}</a>
+       </li>
+    </div>
+    
+    {% endfor %}
+</ol>
+
+{% endblock %}

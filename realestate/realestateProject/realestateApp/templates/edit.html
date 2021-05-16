@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'addthings.css' %}" type = "text/css" rel="stylesheet">
+
+
+{% endblock %}
+
+{% block content %}
+<h1>매물 수정하기</h1>
+<hr>
+<br><br>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button>수정</button>
+    </form>
+</div>
+ 
+
+
+
+{% endblock %}

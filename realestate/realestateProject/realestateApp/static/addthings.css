@@ -1,0 +1,17 @@
+button {
+    border: solid black 3px;
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    font-size: 15px;
+}
+p {
+    margin: 10px;
+}
+.middle {
+    font-size: 20px;
+    font-weight: 600;
+}
+form {
+    margin-left:30px;
+}
